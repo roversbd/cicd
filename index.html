@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bharanidharan S | Cyber Security Analyst</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    /* --- FLUENT DESIGN STYLE --- */
+    :root {
+        --accent: #0078D4;
+        --bg: #f3f2f1;
+        --card-bg: #ffffffcc;
+        --text-color: #222;
+        --shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    body {
+        margin: 0;
+        background: var(--bg);
+        font-family: "Segoe UI", sans-serif;
+        color: var(--text-color);
+    }
+
+    header {
+        backdrop-filter: blur(20px);
+        background: #ffffffcc;
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-weight: 600;
+    }
+
+    header nav a {
+        margin: 0 12px;
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+    }
+
+    .hero {
+        padding: 100px 40px;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .section {
+        padding: 80px 40px;
+    }
+
+    .card {
+        background: var(--card-bg);
+        padding: 25px;
+        margin: 20px 0;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+    }
+
+    .icon {
+        width: 26px;
+        height: 26px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        gap: 20px;
+    }
+
+    footer {
+        margin-top: 40px;
+        padding: 20px;
+        background: #e1e1e1;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .accent {
+        color: var(--accent);
+    }
+
+    a.btn {
+        background: var(--accent);
+        color: white;
+        padding: 10px 22px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 15px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Bharanidharan S</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Cyber Security Analyst</h2>
+    <p>Focused on practical security, threat analysis, and hands-on defense strategies. No fluff—only real, verifiable cybersecurity work.</p>
+    <a class="btn" href="#projects">View My Work</a>
+</section>
+
+<section class="section" id="about">
+    <h2 class="accent">About Me</h2>
+    <div class="card">
+        <p>
+            I'm <strong>Bharanidharan S</strong>, a Cyber Security Analyst specializing in:
+        </p>
+        <ul>
+            <li>✔ Penetration Testing & Vulnerability Assessment</li>
+            <li>✔ Incident Response & Log Analysis</li>
+            <li>✔ Threat Hunting & Malware Behavior Study</li>
+            <li>✔ SIEM Monitoring (Elastic, Splunk)</li>
+            <li>✔ Secure Network Architecture & Hardening</li>
+        </ul>
+        <p>I focus on actionable, realistic security solutions—not generic theory.</p>
+    </div>
+</section>
+
+<section class="section" id="skills">
+    <h2 class="accent">Core Skills</h2>
+    <div class="skills-grid">
+        <div class="card">
+            <!-- Shield icon -->
+            <svg class="icon" viewBox="0 0 24 24">
+                <path fill="#0078D4" d="M12 1l9 4v6c0 5.55-3.84 10.74-9 12-5.16-1.26-9-6.45-9-12V5l9-4z"/>
+            </svg>
+            <strong>Offensive Security</strong>
+            <p>Web pentesting, OSINT, exploit analysis, and red-team tactics.</p>
+        </div>
+        <div class="card">
+            <!-- Terminal icon -->
+            <svg class="icon" viewBox="0 0 24 24">
+                <path fill="#0078D4" d="M2 3h20v18H2V3zm3 4v2h5V7H5zm0 4v2h7v-2H5zm0 4v2h9v-2H5z"/>
+            </svg>
+            <strong>Blue Team & Defense</strong>
+            <p>Detection engineering, SIEM dashboards, SOC workflows.</p>
+        </div>
+        <div class="card">
+            <!-- Lock icon -->
+            <svg class="icon" viewBox="0 0 24 24">
+                <path fill="#0078D4" d="M12 1a5 5 0 015 5v4h1a2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2v-9a2 2 0 012-2h1V6a5 5 0 015-5zm-3 9h6V6a3 3 0 00-6 0v4z"/>
+            </svg>
+            <strong>Network & System Security</strong>
+            <p>Firewall rules, secure configs, AD hardening, protocol analysis.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="projects">
+    <h2 class="accent">Highlighted Projects</h2>
+
+    <div class="card">
+        <h3>✔ Enterprise Web App Pentest</h3>
+        <p>Performed a full OWASP-based assessment, exploited critical auth bypass, delivered remediation blueprint.</p>
+    </div>
+
+    <div class="card">
+        <h3>✔ SOC Threat Detection Pack</h3>
+        <p>Created Sigma rules, custom alerts, and log parsers for Linux and Windows servers.</p>
+    </div>
+
+    <div class="card">
+        <h3>✔ Malware Behavior Analysis Sandbox</h3>
+        <p>Built a controlled VM environment for analyzing suspicious executables and network behavior.</p>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <h2 class="accent">Contact</h2>
+    <div class="card">
+        <p>Let's connect for cybersecurity projects, assessments, or collaborations.</p>
+        <ul>
+            <li>Email: <strong>your-email@example.com</strong></li>
+            <li>LinkedIn: <strong>your-linkedin</strong></li>
+            <li>GitHub: <strong>your-github</strong></li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    © 2025 Bharanidharan S — Cyber Security Analyst
+</footer>
+
+</body>
+</html>
