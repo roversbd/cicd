@@ -2,210 +2,141 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bharanidharan S | Cyber Security Analyst</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Challenge</title>
 
 <style>
-    /* --- FLUENT DESIGN STYLE --- */
-    :root {
-        --accent: #0078D4;
-        --bg: #f3f2f1;
-        --card-bg: #ffffffcc;
-        --text-color: #222;
-        --shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-
     body {
         margin: 0;
-        background: var(--bg);
+        background: #0b0f19;
         font-family: "Segoe UI", sans-serif;
-        color: var(--text-color);
+        color: #e9eefc;
+        overflow: hidden;
     }
 
-    header {
-        backdrop-filter: blur(20px);
-        background: #ffffffcc;
-        box-shadow: var(--shadow);
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        padding: 20px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    /* Animated glowing background gradients */
+    .bg-glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.35;
+        animation: drift 18s infinite alternate ease-in-out;
+        z-index: -10;
     }
 
-    header h1 {
-        margin: 0;
-        font-weight: 600;
+    .blue { background: #3a7bd5; top: -10%; left: -10%; }
+    .teal { background: #2bd9d9; top: 40%; left: 70%; animation-duration: 22s; }
+    .green { background: #15ff99; top: 70%; left: 20%; animation-duration: 26s; }
+    .orange { background: #ff8f3c; top: 10%; left: 60%; animation-duration: 20s; }
+
+    @keyframes drift {
+        from { transform: translateY(0px) translateX(0px); }
+        to { transform: translateY(80px) translateX(40px); }
     }
 
-    header nav a {
-        margin: 0 12px;
-        text-decoration: none;
-        color: var(--text-color);
-        font-weight: 500;
+    /* Kubernetes hexagon icons floating */
+    .kube-hex {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background: rgba(0,140,255,0.15);
+        border: 2px solid rgba(0,150,255,0.35);
+        clip-path: polygon(25% 5%, 75% 5%, 95% 50%, 75% 95%, 25% 95%, 5% 50%);
+        animation: floatHex 12s infinite ease-in-out;
+        filter: blur(1px);
     }
 
-    .hero {
-        padding: 100px 40px;
+    @keyframes floatHex {
+        0% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+        50% { transform: translateY(-40px) rotate(20deg); opacity: 0.8; }
+        100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+    }
+
+    .hex1 { top: 20%; left: 10%; }
+    .hex2 { top: 60%; left: 80%; animation-delay: -2s; }
+    .hex3 { top: 75%; left: 35%; animation-delay: -4s; }
+
+    /* Title */
+    #title {
         text-align: center;
+        font-size: 3.2rem;
+        font-weight: 800;
+        margin-top: 60px;
+        letter-spacing: 4px;
+        background: linear-gradient(to right, #00d2ff, #3a7bd5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
     }
 
-    .hero h2 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-    }
-
-    .section {
-        padding: 80px 40px;
+    /* Container for statements */
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 80px;
     }
 
     .card {
-        background: var(--card-bg);
-        padding: 25px;
-        margin: 20px 0;
-        border-radius: 12px;
-        backdrop-filter: blur(10px);
-        box-shadow: var(--shadow);
+        width: 40%;
+        background: rgba(255,255,255,0.04);
+        padding: 35px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.08);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 0 40px rgba(0,150,255,0.25);
+        transition: 0.3s ease;
     }
 
-    .icon {
-        width: 26px;
-        height: 26px;
-        vertical-align: middle;
-        margin-right: 10px;
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 50px rgba(0,200,255,0.5);
     }
 
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-        gap: 20px;
+    .label {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #00c3ff;
+        margin-bottom: 12px;
     }
 
-    footer {
-        margin-top: 40px;
-        padding: 20px;
-        background: #e1e1e1;
-        text-align: center;
-        font-size: 0.9rem;
-    }
-
-    .accent {
-        color: var(--accent);
-    }
-
-    a.btn {
-        background: var(--accent);
-        color: white;
-        padding: 10px 22px;
-        border-radius: 8px;
-        text-decoration: none;
-        display: inline-block;
-        margin-top: 15px;
+    .text {
+        font-size: 1.4rem;
+        opacity: 0.9;
     }
 </style>
-</head>
 
+</head>
 <body>
 
-<header>
-    <h1>Bharanidharan S</h1>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<!-- Glowing animated background blobs -->
+<div class="bg-glow blue"></div>
+<div class="bg-glow teal"></div>
+<div class="bg-glow green"></div>
+<div class="bg-glow orange"></div>
 
-<section class="hero">
-    <h2>Cyber Security Analyst</h2>
-    <p>Focused on practical security, threat analysis, and hands-on defense strategies. No fluff—only real, verifiable cybersecurity work.</p>
-    <a class="btn" href="#projects">View My Work</a>
-</section>
+<!-- Floating Kubernetes hexagons -->
+<div class="kube-hex hex1"></div>
+<div class="kube-hex hex2"></div>
+<div class="kube-hex hex3"></div>
 
-<section class="section" id="about">
-    <h2 class="accent">About Me</h2>
+<!-- Title -->
+<div id="title">DevOps Challenge</div>
+
+<!-- Two statement cards -->
+<div class="wrapper">
     <div class="card">
-        <p>
-            I'm <strong>Bharanidharan S</strong>, a Cyber Security Analyst specializing in:
-        </p>
-        <ul>
-            <li>✔ Penetration Testing & Vulnerability Assessment</li>
-            <li>✔ Incident Response & Log Analysis</li>
-            <li>✔ Threat Hunting & Malware Behavior Study</li>
-            <li>✔ SIEM Monitoring (Elastic, Splunk)</li>
-            <li>✔ Secure Network Architecture & Hardening</li>
-        </ul>
-        <p>I focus on actionable, realistic security solutions—not generic theory.</p>
-    </div>
-</section>
-
-<section class="section" id="skills">
-    <h2 class="accent">Core Skills</h2>
-    <div class="skills-grid">
-        <div class="card">
-            <!-- Shield icon -->
-            <svg class="icon" viewBox="0 0 24 24">
-                <path fill="#0078D4" d="M12 1l9 4v6c0 5.55-3.84 10.74-9 12-5.16-1.26-9-6.45-9-12V5l9-4z"/>
-            </svg>
-            <strong>Offensive Security</strong>
-            <p>Web pentesting, OSINT, exploit analysis, and red-team tactics.</p>
-        </div>
-        <div class="card">
-            <!-- Terminal icon -->
-            <svg class="icon" viewBox="0 0 24 24">
-                <path fill="#0078D4" d="M2 3h20v18H2V3zm3 4v2h5V7H5zm0 4v2h7v-2H5zm0 4v2h9v-2H5z"/>
-            </svg>
-            <strong>Blue Team & Defense</strong>
-            <p>Detection engineering, SIEM dashboards, SOC workflows.</p>
-        </div>
-        <div class="card">
-            <!-- Lock icon -->
-            <svg class="icon" viewBox="0 0 24 24">
-                <path fill="#0078D4" d="M12 1a5 5 0 015 5v4h1a2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2v-9a2 2 0 012-2h1V6a5 5 0 015-5zm-3 9h6V6a3 3 0 00-6 0v4z"/>
-            </svg>
-            <strong>Network & System Security</strong>
-            <p>Firewall rules, secure configs, AD hardening, protocol analysis.</p>
-        </div>
-    </div>
-</section>
-
-<section class="section" id="projects">
-    <h2 class="accent">Highlighted Projects</h2>
-
-    <div class="card">
-        <h3>✔ Enterprise Web App Pentest</h3>
-        <p>Performed a full OWASP-based assessment, exploited critical auth bypass, delivered remediation blueprint.</p>
+        <div class="label">Statement A</div>
+        <div class="text" id="statementA"> DevOps focuses on shorter development cycles and faster delivery.</div>
     </div>
 
     <div class="card">
-        <h3>✔ SOC Threat Detection Pack</h3>
-        <p>Created Sigma rules, custom alerts, and log parsers for Linux and Windows servers.</p>
+        <div class="label">Statement B</div>
+        <div class="text" id="statementB">DevOps aims to slow down deployments for safety.</div>
     </div>
-
-    <div class="card">
-        <h3>✔ Malware Behavior Analysis Sandbox</h3>
-        <p>Built a controlled VM environment for analyzing suspicious executables and network behavior.</p>
-    </div>
-</section>
-
-<section class="section" id="contact">
-    <h2 class="accent">Contact</h2>
-    <div class="card">
-        <p>Let's connect for cybersecurity projects, assessments, or collaborations.</p>
-        <ul>
-            <li>Email: <strong>your-email@example.com</strong></li>
-            <li>LinkedIn: <strong>your-linkedin</strong></li>
-            <li>GitHub: <strong>your-github</strong></li>
-        </ul>
-    </div>
-</section>
-
-<footer>
-    © 2025 Bharanidharan S — Cyber Security Analyst
-</footer>
+</div>
 
 </body>
 </html>
